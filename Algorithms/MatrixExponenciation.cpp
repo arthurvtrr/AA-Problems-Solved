@@ -1,19 +1,26 @@
-#include <bits/stdc++.h>
-#define SIZE 2
-#define ll long long int
+#include <stdio.h>
+#include <algorithm>
+#include <string.h>
 
 using namespace std;
 
+#define SIZE 2
+#define ll long long
+
 ll M;
 
-struct Matrix{
+struct Matrix {
     ll mat[SIZE][SIZE];
-    Matrix() { memset(mat, 0,sizeof(mat));};
+
+    Matrix() {
+        memset(mat, 0,sizeof(mat));
+    };
+
     Matrix operator * (const Matrix & in) const {
         Matrix aux;
-        for(int i = 0; i < SIZE;i++){
-            for(int j = 0;j < SIZE;j++){
-                for(int k = 0; k < SIZE;k++){
+        for(int i = 0; i < SIZE; i++) {
+            for(int j = 0; j < SIZE; j++) {
+                for(int k = 0; k < SIZE; k++) {
                     aux.mat[i][j] = (mat[i][k] * in.mat[k][j] + aux.mat[i][j]);
                 }
             }
@@ -22,8 +29,7 @@ struct Matrix{
     }
 };
 
-Matrix matExpo(Matrix x, ll y){
-
+Matrix matExpo(Matrix x, ll y) {
 	Matrix result;
 	if(y <= 1) return x;
 

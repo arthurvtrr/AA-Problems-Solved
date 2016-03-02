@@ -1,10 +1,13 @@
 #include <stdio.h>
+#include <algorithm>
 
 using namespace std;
 
-int nums[66000], bit[66000];
+#define N 110000
 
-void update(int pos, int x, int n) {
+int n, nums[N], bit[N];
+
+void update(int pos, int x) {
     while (pos <= n) {
         bit[pos] += x;
         pos += pos & -pos;
@@ -19,15 +22,4 @@ int query(int pos) {
         pos -= pos & -pos;
     }
     return sum;
-}
-
-int main() {
-    int n;
-    scanf("%d", &n);
-    for (int i = 1; i <= n; i++) {
-        scanf("%d", &nums[i]);
-        // building the BIT
-        update(i, nums[i], n);
-    }
-    return 0;
 }

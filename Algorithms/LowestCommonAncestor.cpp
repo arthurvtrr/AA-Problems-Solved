@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <algorithm>
 #include <vector>
 #include <string.h>
 
@@ -9,8 +10,8 @@ using namespace std;
 
 // T[i] contains the father of i, L[i] contains the level of i
 int T[MAX], P[MAX][LOG], L[MAX];
-vector < int > graph[1010];
-bool visited[1010];
+vector < int > graph[MAX];
+bool visited[MAX];
 
 // Calculating T[i] and L[i]
 void dfs(int u, int father, int lvl) {

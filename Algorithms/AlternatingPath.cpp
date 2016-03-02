@@ -1,3 +1,9 @@
+#include <stdio.h>
+#include <algorithm>
+#include <string.h>
+
+using namespace std;
+
 #define N 40
 #define M 35
 
