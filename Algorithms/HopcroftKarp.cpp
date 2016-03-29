@@ -32,9 +32,9 @@ bool hopBfs() {
 
         if (dist[u] < dist[0])
             for (int v : graph[u])
-                if (dist[pairV[v]] == INF) {
-                    dist[pairV[v]] = dist[u] + 1;
-                    fila.push(pairV[v]);
+                if (dist[pairV[v-AUX]] == INF) {
+                    dist[pairV[v-AUX]] = dist[u] + 1;
+                    fila.push(pairV[v-AUX]);
                 }
     }
 
@@ -45,9 +45,9 @@ bool hopDfs(int u) {
     if (u == 0) return true;
 
     for (int v : graph[u])
-        if (dist[pairV[v]] == dist[u] + 1)
-            if (hopDfs(pairV[v])) {
-                pairV[v] = u;
+        if (dist[pairV[v-AUX]] == dist[u] + 1)
+            if (hopDfs(pairV[v-AUX])) {
+                pairV[v-AUX] = u;
                 pairU[u] = v;
                 return true;
             }
