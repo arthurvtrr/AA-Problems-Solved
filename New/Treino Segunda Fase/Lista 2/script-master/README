@@ -1,0 +1,7 @@
+Scripts de correção automática
+
+1. Adicione os códigos dos alunos na pasta "alunos" - cada pasta refere-se ao nome do aluno
+2. Adicione os problemas em "problemas" - cada pasta refere-se a um problema e cada problema tem um conjunto de casos
+3. Execute o comando "python script.py" no terminal
+
+
